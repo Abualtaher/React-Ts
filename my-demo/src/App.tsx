@@ -9,11 +9,24 @@ function App() {
       <AppBar position="static">
         <Toolbar>
           <Typography variant="h6" sx={{ flexGrow: 1 }}>
-            React TS Demo{" "}
+            React TS Demo
           </Typography>
-          <Button color="inherit"></Button>
+          <Button color="inherit" component={Link} to="/">
+            Hem
+          </Button>
+          <Button color="inherit" component={Link} to="/users">
+            Användare
+          </Button>
+          <Button color="inherit" component={Link} to="/form">
+            Formulär
+          </Button>
         </Toolbar>
       </AppBar>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/users" element={<Users />} />
+        <Route path="/form" element={<FormPage />} />
+      </Routes>
     </>
   );
 }

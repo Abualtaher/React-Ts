@@ -9,21 +9,24 @@ function FormPage() {
     setSubmitted(true);
   };
 
-  return;
-  <>
-    <h1>Formulär</h1>
-    <form onSubmit={handleSubmit}>
-      <TextField
-        value={name}
-        label="Your name here"
-        onChange={(e) => setName(e.target.value)}
-        fullWidth
-        margin="normal"
-      />
-      <Button type="submit" variant="contained"></Button>
-    </form>
-    {submitted && <Typography variant="h6">Hej {name}!</Typography>}
-  </>;
+  return (
+    <>
+      <h1>Formulär</h1>
+      <form onSubmit={handleSubmit}>
+        <TextField
+          value={name}
+          label="Your name here"
+          onChange={(e) => setName(e.target.value)}
+          fullWidth
+          margin="normal"
+        />
+        <Button type="submit" variant="contained">
+          Submit
+        </Button>
+      </form>
+      {submitted && <Typography variant="h6">Hej {name}!</Typography>}
+    </>
+  );
 }
 
 export default FormPage;
